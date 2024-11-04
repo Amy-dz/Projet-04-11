@@ -1,0 +1,91 @@
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+}
+
+/* body,
+html {
+  height: 100%;
+} */
+
+h1 {
+  margin: 10px;
+}
+
+.imgfond {
+  background-image: url("../img/tournois/imgfond.jpg"); /* Remplace par le chemin de ton image */
+  background-size: cover; /* Couvre toute la surface */
+  background-position: center; /* Centre l'image */
+  height: 100vh; /* Hauteur de la fenêtre */
+  display: flex; /* Permet d'aligner le contenu */
+  flex-direction: column; /* Colonne pour centrer le texte */
+  justify-content: center; /* Centre verticalement */
+  align-items: center; /* Centre horizontalement */
+  color: white; /* Couleur du texte */
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Ombre pour le texte */
+  padding: 20px; /* Espacement intérieur */
+  text-align: center;
+}
+
+.slogan {
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Fond semi-transparent pour améliorer la lisibilité */
+  padding: 20px; /* Espacement intérieur */
+  border-radius: 10px; /* Coins arrondis */
+}
+
+.insbo {
+  background-color: #c33434; /* Couleur du bouton */
+  color: white; /* Couleur du texte du bouton */
+  border: none; /* Pas de bordure */
+  padding: 10px 20px; /* Espacement intérieur du bouton */
+  font-size: 16px; /* Taille de police */
+  border-radius: 5px; /* Coins arrondis */
+  cursor: pointer; /* Curseur pointer sur le bouton */
+  transition: background-color 0.3s; /* Animation lors du survol */
+  margin: 20px;
+}
+
+.insbo:hover {
+  background-color: #767676; /* Couleur lors du survol */
+}
+
+.container {
+  display: flex; /* Utilisation de flexbox pour les colonnes */
+  justify-content: space-between; /* Espacement égal entre les colonnes */
+  padding: 20px;
+  max-width: 1200px; /* Largeur maximale de la container */
+  margin: 0 auto; /* Centre la container */
+}
+
+.tableau {
+  background-color: #fff; /* Couleur de fond des colonnes */
+  border: 1px solid #ddd; /* Bordure autour des colonnes */
+  border-radius: 8px; /* Coins arrondis */
+  padding: 20px; /* Espacement intérieur */
+  flex: 1; /* Chaque colonne prend un espace égal */
+  margin: 0 10px; /* Espacement entre les colonnes */
+}
+
+.tableau h2 {
+  margin-bottom: 10px; /* Espacement sous le titre */
+}
+
+.tableau p {
+  color: #555; /* Couleur du texte */
+}
+
+h2 {
+  text-align: center;
+  margin: 50px;
+}
+
+.mario {
+  background-image: url("../img/tournois/super_mario_tournois.jpg");
+  background-size: 10px;
+}
