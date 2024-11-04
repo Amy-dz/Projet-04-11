@@ -61,12 +61,12 @@ p{
 img{
     border: 5px solid #f1f1f1;
     width: 100%;
-    height: 50vw;
+    height: auto;
 }
 
-div{
+.débuts{
     display: flex;
-    flex-direction: column-rows;
+    flex-direction: row-reverse;
 }
 
 .console > div > img{
@@ -77,13 +77,79 @@ div{
 
 
 .débuts > div > img{
-    width: 25%;
+    width: 400px;
     height: 25vw;
-    display: inline-block;
+    margin-right: 20px;
+    
 }
 }
 
+@media(min-width:900px){
+    
+    body{
+        background-color: #062050;
+        color: #f1f1f1;
+    }
 
+    #présentation > img{   
+    width: 100%;
+    height: 37vw;
+    object-fit: cover;}
+
+    h1{
+        text-align: center;
+        font-size: 44px;
+        border: 25px solid yellow;
+    }
+
+    .débuts{
+        display: flex;
+        flex-direction: row-reverse;
+        text-align: center;
+    }
+    .débuts > div > img{
+        width: 100%;
+        margin-right: 20px;
+    
+    }
+
+    h2{
+        text-align: center;
+        border: 5px solid red;
+        font-size: 28px;
+    }
+    
+    .console{
+        display: flex;
+        
+    }
+
+    .console > div{
+       margin-right: 30px;
+       margin-top: 50px;
+    }
+
+    .console > .container4 > img{
+        width: 100%;
+        height: 15vw;
+        
+    }
+
+    .iconique{
+        display: flex;    
+    }
+
+    .iconique > img{
+        width: 100%;
+        height: 15vw;
+    }
+
+    
+        
+        
+        
+    
+}
 
 
 
