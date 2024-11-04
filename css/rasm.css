@@ -1,0 +1,14 @@
+.btn-billetterie {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff5733; /* Couleur de fond */
+    color: white; /* Couleur du texte */
+    text-decoration: none; /* Pas de soulignement */
+    border-radius: 5px; /* Coins arrondis */
+    font-size: 16px; /* Taille de la police */
+    transition: background-color 0.3s; /* Transition pour l'effet hover */
+}
+
+.btn-billetterie:hover {
+    background-color: #c0392b; /* Couleur au survol */
+}
