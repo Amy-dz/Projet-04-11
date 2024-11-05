@@ -281,8 +281,7 @@
 body{
     display: flexbox;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    background-color: #07195a;
 }
 h1{
     padding-top: 140px;
@@ -312,19 +311,31 @@ button {
 /********************************************FIN de Présentation**********************************************/
 
 .container1 {
-    display: flex;
-    flex-wrap: wrap; /* Permet aux colonnes de passer à la ligne suivante si l'espace est insuffisant */
+  display: flex;
+  flex-wrap: wrap;
+	justify-content: center;
 }
 .column {
-    flex: 1; /* Chaque colonne prend une part égale de l'espace */
-    padding: 10px;
-    height: auto;
-    max-width: 500px;
-    box-sizing: border-box; /* Inclut le padding dans la largeur */
+  flex: 2;
+  padding: 10px;
+  height: auto;
+  max-width: 500px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  width:308px;
+	background: white;
+	margin:10px 10px;
+	padding: 10px 5px;
+	display:flex;
+	flex-direction: column;
+	box-shadow: 5px 5px #d6e10a;
+	transition:0.3s ease-in-out;
+	margin-top: 5%;
 }
 
 img {
     width: 350px;
+    border-radius: 10px;
 }
 @media (max-width: 600px) {
     .column {
@@ -335,3 +346,4 @@ img {
 	display: table;
 	clear: both;
 }
+
