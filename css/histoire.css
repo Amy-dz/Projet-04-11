@@ -1,25 +1,54 @@
-@media (min-width:300px){
-img{
+@media (min-width:300px) and (max-width:599px){      
+
+    body{
+        background-color: black;
+        color: #f1f1f1;
+    }
+    
+    
+    h1,h2{
+        text-align: center;
+    }
+
+/*---------------------------------------------------- Image personnages Nintendo.------------------------------------------------------*/
+
+.présentation > img {
+    object-fit: cover;
     width: 100%;
     height: 50vw;
-    border: 5px solid #f1f1f1;
-    
-    
-}
-
-#présentation > img {
-    object-fit: cover;
+    border: 3px solid #f1f1f1;
     
 }
 
+/*------------------------------------------------ fin Image personnages Nintendo.------------------------------------------------------*/
+/*------------------------------------------------ texte et image Nintendo.-------------------------------------------------------------*/
 
-body{
-    background-color: black;
-    color: #f1f1f1;
+.débuts > img{
+    width: 100%;
+    height: auto;
 }
-h1,h2{
-    text-align: center;
+
+/*------------------------------------------------ fin texte et image Nintendo.---------------------------------------------------------*/
+/*------------------------------------------------ Image consoles Nintendo.-------------------------------------------------------------*/
+
+.console > div > img{
+    width: 100%;
+    height: 50vw;
 }
+
+/*------------------------------------------------ fin Image consoles Nintendo.---------------------------------------------------------*/
+/*------------------------------------------------ Image personnages iconique Nintendo.-------------------------------------------------*/
+
+.iconique > div > img{
+    width: 100%;
+    height: auto;
+}
+
+/*------------------------------------------------ fin Image personnages iconique Nintendo.---------------------------------------------*/
+
+
+
+/*---------------------------------------------------- Tous les paragraphes.------------------------------------------------------------*/
 
 p{      
     background-color: #ea4d4d;
@@ -33,67 +62,92 @@ p{
     margin-top: 10px;
     z-index: 1;
  }
+
+/*------------------------------------------------ Fin Tous les paragraphes.------------------------------------------------------------*/
  
 }
 
 /*---------------------------------------------------- à partir de ci-dessous c'est version tablette.-----------------------------------*/
 
 @media(min-width:600px) and (max-width:899px){
+    
+    body{
+        background-color: #062050;
+        color: rgb(234, 228, 228);
+    }
+    
+    h1{
+        text-align: center;
+        font-size: 34px;
+    }
+    
+    h2{
+        text-align: center;
+    }
+
+    p{
+        font-size: 20px;
+    }
    
 /*---------------------------------------------------- Image personnages Nintendo.------------------------------------------------------*/
 
-    #présentation > img{
+    .présentation > img{
         width: 100%;
         height: 50vw;
         object-fit: cover;
         
     }
 
-/*---------------------------------------------------- Fin image personnages Nintendo---------------------------------------------------*/
-
-body{
-    background-color: #062050;
-    color: rgb(234, 228, 228);
-}
-
-h1{
-    text-align: center;
-    font-size: 34px;
-}
-
-h2{
-    text-align: center;
-}
-
-p{
-    font-size: 20px;
-}
-
-img{
-    border: 5px solid #f1f1f1;
-    width: 100%;
-    height: ;
-}
+/*---------------------------------------------------- Fin image personnages Nintendo---------------------------------------------------*
 /*------------------------------------------------------texte et image Nintendo---------------------------------------------------------*/
 .débuts{
     display: flex;
     flex-direction: row;
-}
-/*------------------------------------------------------fin texte image Nintendo--------------------------------------------------------*/
-.console > div > img{
-    width: 500px;
-    height: 25vw;
+    width: ;
 }
 
+.débuts > img{
+    width: 100%;
+    height: auto;
+    margin-left: 50px;
 
-
-.débuts > div > img{
-    width: 400px;
-    height: 25vw;
-    margin-right: 20px;
     
 }
+/*------------------------------------------------------fin texte image Nintendo--------------------------------------------------------*/
+
+.console > div > img{
+    width: 50%;
+    height: 25vw;
+   
+    
 }
+
+.console > div > p{
+    width: 50%;
+}
+
+.container1{   
+    flex-direction: row;
+
+    
+}
+
+.iconique{
+    display: flex;
+    flex-direction: row;
+}
+    
+.iconique > img{
+    width: 30%;
+    height: 50vw;
+}
+
+ 
+
+
+
+
+  }
 
 @media(min-width:900px){
     
