@@ -1,7 +1,319 @@
+
+
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    /* text-decoration: none;
+    list-style: none; */
+    font-family: "Roboto", sans-serif;
+  }
+  
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.645);
+    backdrop-filter: blur(50px);
+    z-index: 100;
+  }
+  
+  .navbar a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 10px 20px;
+    margin: 0 5px;
+    position: relative;
+    transition: all 0.5s ease;
+  }
+  
+  .navbar a::before {
+    content: "►"; /* flèche */
+    color: #ffd700; /* couleur de la flèche */
+    position: absolute;
+    left: 0px; /* distance de la flèche par rapport au texte */
+    opacity: 0; /* invisible par défaut */
+    transition: opacity 0.8s ease; /* transition pour la rendre visible */
+  }
+  
+  .navbar a:hover {
+    animation: textBlink 0.6s infinite;
+  }
+  
+  .navbar a:hover::before {
+    opacity: 1; /* flèche visible au survol */
+  }
+  
+  /* Animation clignotante */
+  @keyframes textBlink {
+    0%,
+    50%,
+    100% {
+      color: #ffd700; /* couleur sur survol */
+    }
+    25%,
+    75% {
+      color: #f0f0f0; /* couleur originale */
+    }
+  }
+  
+  .navbar a:hover {
+    color: #ffd700; /* couleur sur survol */
+    background: #222; /* fond rétro pour l'effet */
+    border: 2px solid #ffd700; /* bordure qui renforce l'effet pixel */
+    transform: scale(1.05); /* effet léger de zoom */
+    animation: textBlink 0.6s infinite; /* animation de clignotement */
+  }
+  
+  .logo img {
+    width: 100px;
+    margin-right: 100px;
+  }
+  
+  .navbar a {
+    font-size: 12px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    list-style: none;
+    font-family: "Press Start 2P", serif;
+    margin-left: 30px;
+    padding-right: 20px;
+  }
+  
+  #check {
+    display: none;
+  }
+  
+  .icons {
+    position: absolute;
+    right: 5%;
+    font-size: 2.8rem;
+    color: white;
+    cursor: pointer;
+    display: none;
+  }
+  
+  @media (max-width: 1116px) {
+    .logo img {
+      width: 100px;
+      margin-right: 10px;
+    }
+    .navbar {
+      position: relative;
+    }
+  
+    .navbar a {
+      margin-left: 50px;
+      padding: 10px 15px;
+    }
+  }
+  
+  @media (max-width: 1075px) {
+    .logo img {
+      width: 100px;
+      margin-right: 10px;
+    }
+    .navbar {
+      position: relative;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 0;
+    }
+    .navbar a {
+      margin-left: 50px;
+      padding: 10px 10px;
+    }
+  }
+  
+  @media (max-width: 1025px) {
+    .logo img {
+      width: 100px;
+      margin-right: 1px;
+    }
+    .navbar {
+      position: relative;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 0;
+    }
+    .navbar a {
+      margin-left: 50px;
+      padding: 10px 10px;
+    }
+  }
+  
+  @media (max-width: 1016px) {
+    .icons {
+      display: inline-flex;
+    }
+  
+    #check:checked ~ .icons #menu-icon {
+      display: none;
+    }
+  
+    .icons #close-icon {
+      display: none;
+    }
+  
+    #check:checked ~ .icons #close-icon {
+      display: block;
+    }
+  
+    .navbar {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 0;
+      background-color: rgba(10, 11, 11, 0.767);
+      overflow: hidden;
+      /* backdrop-filter: blur(50px); */
+      transition: 0.3s ease;
+      /* box-shadow: 0.5rem 5rem black; */
+    }
+  
+    #check:checked ~ .navbar {
+      height: 100vh;
+    }
+  
+    .navbar a {
+      display: block;
+      font-size: 18px;
+      margin: 50px 0;
+      text-align: center;
+      transform: translateY(-50px);
+      opacity: 0;
+      transition: 0.9 ease;
+    }
+  
+    #check:checked ~ .navbar a {
+      transform: translateY(0);
+      opacity: 1;
+      transition-delay: calc(0.15s * var(--i));
+    }
+  
+    .navbar a::before {
+      content: "►"; /* flèche */
+      color: #ffd700; /* couleur de la flèche */
+      position: absolute;
+      top: 6px;
+      left: 35%; /* distance de la flèche par rapport au texte */
+      opacity: 0; /* invisible par défaut */
+      transition: opacity 0.8s ease; /* transition pour la rendre visible */
+    }
+    .footer-content h3 {
+      font-size: 1.3em;
+    }
+  
+    .socials li a {
+      font-size: 1em;
+    }
+  }
+  
+  /***********************************************FIN NAVBAR*******************************************************************/
+  
+  /*************************************************FOOTER*******************************************************************/
+  
+  /* Style de base du footer */
+  footer {
+    background-color: #222;
+    color: #f0f0f0;
+    text-align: center;
+    padding: 20px 10px;
+  }
+  
+  .footer-bottom p a {
+    top: 100px;
+    list-style-type: none;
+    text-decoration: none;
+    color: #ffffff;
+  }
+  
+  .footer-bottom p a:hover {
+    text-decoration: underline rgb(245, 213, 6) 3px;
+  }
+  .footer-content h3 {
+    font-size: 1.5em;
+    margin: 10px 0;
+  }
+  
+  .footer-content p {
+    font-size: 0.9em;
+    line-height: 1.5;
+    margin: 10px 0;
+  }
+  
+  /* Styles pour les icônes de réseaux sociaux */
+  .socials {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 15px 0;
+  }
+  
+  .socials li a {
+    text-decoration: none;
+    color: #ffd700;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+  }
+  
+  .socials li a:hover {
+    color: #f0f0f0; /* Couleur au survol */
+  }
+  
+  /* Style pour le bas du footer */
+  .footer-bottom {
+    font-size: 0.8em;
+    margin-top: 15px;
+  }
+  /************************************************* FIN FOOTER*******************************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 body{
     text-align: center;
+    font-family: "Courier New", Courier, monospace; /* Police rétro style machine à écrire */
+    background-color: #000080; /* Bleu marine classique */
+    color: #fff; /* Texte blanc */
+    margin: 0;
+    padding: 0;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    height: 100vh;
 }
-
+h1 {
+    font-family: 'Press Start 2P', cursive; /* Police rétro en style pixel */
+    text-align: center;
+    font-size: 2.5rem;
+    color: #ff0000; /* Rouge vif */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), 0 0 25px #ff0000, 0 0 5px #ff0000; /* Ombres multiples pour l'effet rétro */
+    margin-bottom: 20px;
+}
 img {
     width: 700px;
 }
@@ -20,6 +332,163 @@ img {
 .btn-billetterie:hover {
     background-color: #c0392b; /* Couleur au survol */
 }
- .container{
+
+
+.container{
     text-align: center;
- }
+    margin-top: 190px;
+}
+
+
+
+
+/* Styles de base */
+
+
+.retro-container {
+    background-color: #ffcc00; /* Jaune vif typique des années 80 */
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.retro-container h1{
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+    font-family: 'Arial', sans-serif; /* Utilisation d'une police sans-serif pour le titre */
+    text-shadow: 2px 2px #ff0000; /* Effet de texte rétro */
+}
+
+/* Styles pour les questions */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.question {
+    margin-bottom: 15px;
+}
+
+label {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    text-transform: uppercase;
+}
+
+input[type="text"], input[type="number"], select, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ff0000; /* Bordure rouge pour le style rétro */
+    background-color: #000; /* Fond noir pour les champs de texte */
+    color: #fff; /* Texte blanc */
+    font-size: 1rem;
+    font-family: "Courier New", Courier, monospace;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 5px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Groupement de boutons radio */
+.radio-group {
+    display: flex;
+    gap: 10px;
+}
+
+.radio-group input {
+    margin: 0;
+}
+
+/* Bouton de soumission */
+.submit-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+button {
+    background-color: #ff0000; /* Rouge vif */
+    color: #fff;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-family: "Courier New", Courier, monospace;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff4d4d; /* Rouge plus clair au survol */
+}
+
+button:active {
+    background-color: #b30000; /* Rouge sombre au clic */
+}
+
+/* Styles supplémentaires pour rendre le formulaire réactif */
+@media (max-width: 600px) {
+    .retro-container {
+        width: 90%;
+        padding: 15px;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap; /* Permet de mettre les éléments sur plusieurs lignes */
+    gap: 15px;
+    justify-content: center;
+    max-width: 1200px;
+    padding: 20px;
+    width: 100%;
+}
+
+.flex-item {
+    flex: 1 1 calc(25% - 15px); /* Chaque item occupe environ 25% de la largeur avec un écart */
+    box-sizing: border-box;
+    max-width: calc(25% - 15px); /* Limite la largeur des éléments à 33% de l'espace */
+}
+
+.flex-item img, .flex-item video {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+video {
+    max-height: 300px;
+}
