@@ -280,7 +280,7 @@ footer {
 
 /* -------------------------------------------------- version mobile ci-dessous---------------------------------------------------------*/
 
-@media (min-width:300px) and (max-width:600px){      
+@media (min-width:0px) and (max-width:600px){      
 
     body{
         background-color: black;
@@ -594,7 +594,7 @@ footer {
 
 /*------------------------------------------------ Début version pc.------------------------------------------------------------*/
 
-@media (min-width:900px) and (max-width:1700px){      
+@media (min-width:900px) and (max-width:4000px){      
 
   body{
       background-color: #101d39;
@@ -603,7 +603,6 @@ footer {
   
   
   h1,h2{
-      text-align: center;
       margin-top: 32px;
       margin-bottom: 32px;
   }
@@ -738,7 +737,7 @@ footer {
 
 .personnage1{
   flex-direction: row;
-  margin-left: 80px; 
+  margin-left: 120px; 
   margin-right: 80px;
 }
 
