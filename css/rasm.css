@@ -332,9 +332,6 @@ footer {
   height: 100vh; /* Hauteur de la section égale à la hauteur de l'écran */
   overflow: hidden;
 }
-
-
-
 .parallax {
   position: absolute;
   top: 0;
