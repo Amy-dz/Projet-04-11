@@ -1,27 +1,375 @@
-@media (min-width:300px){
-img{
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  /* text-decoration: none;
+  list-style: none; */
+  font-family: "Roboto", sans-serif;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.645);
+  backdrop-filter: blur(50px);
+  z-index: 100;
+}
+
+.navbar a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 10px 20px;
+  margin: 0 5px;
+  position: relative;
+  transition: all 0.5s ease;
+}
+
+.navbar a::before {
+  content: "►"; /* flèche */
+  color: #ffd700; /* couleur de la flèche */
+  position: absolute;
+  left: 0px; /* distance de la flèche par rapport au texte */
+  opacity: 0; /* invisible par défaut */
+  transition: opacity 0.8s ease; /* transition pour la rendre visible */
+}
+
+.navbar a:hover {
+  animation: textBlink 0.6s infinite;
+}
+
+.navbar a:hover::before {
+  opacity: 1; /* flèche visible au survol */
+}
+
+/* Animation clignotante */
+@keyframes textBlink {
+  0%,
+  50%,
+  100% {
+    color: #ffd700; /* couleur sur survol */
+  }
+  25%,
+  75% {
+    color: #f0f0f0; /* couleur originale */
+  }
+}
+
+.navbar a:hover {
+  color: #ffd700; /* couleur sur survol */
+  background: #222; /* fond rétro pour l'effet */
+  border: 2px solid #ffd700; /* bordure qui renforce l'effet pixel */
+  transform: scale(1.05); /* effet léger de zoom */
+  animation: textBlink 0.6s infinite; /* animation de clignotement */
+}
+
+.logo img {
+  width: 100px;
+  margin-right: 100px;
+}
+
+.navbar a {
+  font-size: 12px;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  list-style: none;
+  font-family: "Press Start 2P", serif;
+  margin-left: 30px;
+  padding-right: 20px;
+}
+
+#check {
+  display: none;
+}
+
+.icons {
+  position: absolute;
+  right: 5%;
+  font-size: 2.8rem;
+  color: white;
+  cursor: pointer;
+  display: none;
+}
+
+@media (max-width: 1116px) {
+  .logo img {
+    width: 100px;
+    margin-right: 10px;
+  }
+  .navbar {
+    position: relative;
+  }
+
+  .navbar a {
+    margin-left: 50px;
+    padding: 10px 15px;
+  }
+}
+
+@media (max-width: 1075px) {
+  .logo img {
+    width: 100px;
+    margin-right: 10px;
+  }
+  .navbar {
+    position: relative;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 0;
+  }
+  .navbar a {
+    margin-left: 50px;
+    padding: 10px 10px;
+  }
+}
+
+@media (max-width: 1025px) {
+  .logo img {
+    width: 100px;
+    margin-right: 1px;
+  }
+  .navbar {
+    position: relative;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 0;
+  }
+  .navbar a {
+    margin-left: 50px;
+    padding: 10px 10px;
+  }
+}
+
+@media (max-width: 1016px) {
+  .icons {
+    display: inline-flex;
+  }
+
+  #check:checked ~ .icons #menu-icon {
+    display: none;
+  }
+
+  .icons #close-icon {
+    display: none;
+  }
+
+  #check:checked ~ .icons #close-icon {
+    display: block;
+  }
+
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: rgba(10, 11, 11, 0.767);
+    overflow: hidden;
+    /* backdrop-filter: blur(50px); */
+    transition: 0.3s ease;
+    /* box-shadow: 0.5rem 5rem black; */
+  }
+
+  #check:checked ~ .navbar {
+    height: 100vh;
+  }
+
+  .navbar a {
+    display: block;
+    font-size: 18px;
+    margin: 50px 0;
+    text-align: center;
+    transform: translateY(-50px);
+    opacity: 0;
+    transition: 0.9 ease;
+  }
+
+  #check:checked ~ .navbar a {
+    transform: translateY(0);
+    opacity: 1;
+    transition-delay: calc(0.15s * var(--i));
+  }
+
+  .navbar a::before {
+    content: "►"; /* flèche */
+    color: #ffd700; /* couleur de la flèche */
+    position: absolute;
+    top: 6px;
+    left: 35%; /* distance de la flèche par rapport au texte */
+    opacity: 0; /* invisible par défaut */
+    transition: opacity 0.8s ease; /* transition pour la rendre visible */
+  }
+  .footer-content h3 {
+    font-size: 1.3em;
+  }
+
+  .socials li a {
+    font-size: 1em;
+  }
+}
+
+/***********************************************FIN NAVBAR*******************************************************************/
+
+/*************************************************FOOTER*******************************************************************/
+
+/* Style de base du footer */
+footer {
+  background-color: #222;
+  color: #f0f0f0;
+  text-align: center;
+  padding: 20px 10px;
+  margin-top: 30px;
+}
+
+.footer-bottom p a {
+  top: 100px;
+  list-style-type: none;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.footer-bottom p a:hover {
+  text-decoration: underline rgb(245, 213, 6) 3px;
+}
+.footer-content h3 {
+  font-size: 1.5em;
+  margin: 10px 0;
+}
+
+.footer-content p {
+  font-size: 0.9em;
+  line-height: 1.5;
+  margin: 10px 0;
+}
+
+/* Styles pour les icônes de réseaux sociaux */
+.socials {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 15px 0;
+}
+
+.socials li a {
+  text-decoration: none;
+  color: #ffd700;
+  font-size: 1.2em;
+  transition: color 0.3s ease;
+}
+
+.socials li a:hover {
+  color: #f0f0f0; /* Couleur au survol */
+}
+
+/* Style pour le bas du footer */
+.footer-bottom {
+  font-size: 0.8em;
+  margin-top: 15px;
+}
+/************************************************* FIN FOOTER*******************************************************************/
+
+/* -------------------------------------------------- version mobile ci-dessous---------------------------------------------------------*/
+
+@media (min-width:300px) and (max-width:600px){      
+
+    body{
+        background-color: black;
+        color: #f1f1f1;
+    }
+    
+    
+    h1,h2{
+        text-align: center;
+    }
+
+/*---------------------------------------------------- Image personnages Nintendo.------------------------------------------------------*/
+
+.présentation > img {
+    object-fit: cover;
     width: 100%;
     height: 50vw;
-    border: 5px solid #f1f1f1;
-    
-    
-}
-
-#présentation > img {
-    object-fit: cover;
+    border: 3px solid #f1f1f1;
+    margin-top: 111px;
     
 }
 
 
-body{
-    background-color: black;
-    color: #f1f1f1;
-}
-h1,h2{
-    text-align: center;
+/*------------------------------------------------ fin Image personnages Nintendo.------------------------------------------------------*/
+/*------------------------------------------------ texte et image Nintendo.-------------------------------------------------------------*/
+
+.débuts > img{
+    width: 100%;
+    height: auto;
 }
 
-p{      
+.débuts > div >p{
+  background-color: #ea4d4d;
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 5px 5px 0px #101d39, 10px 10px 0px #d6e10a;
+  font-family: "Roboto", sans-serif;
+  max-width: 600px;
+  text-align: center;
+  margin-top: 10px;
+  z-index: 1;
+}
+
+/*------------------------------------------------ fin texte et image Nintendo.---------------------------------------------------------*/
+/*------------------------------------------------ Image consoles Nintendo.-------------------------------------------------------------*/
+
+.console > div > img{
+    width: 100%;
+    height: 50vw;
+}
+
+.console > div >p{
+  background-color: #ea4d4d;
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 5px 5px 0px #101d39, 10px 10px 0px #d6e10a;
+  font-family: "Roboto", sans-serif;
+  max-width: 600px;
+  text-align: center;
+  margin-top: 10px;
+  z-index: 1;
+}
+
+/*------------------------------------------------ fin Image consoles Nintendo.---------------------------------------------------------*/
+/*------------------------------------------------ Image personnages iconique Nintendo.-------------------------------------------------*/
+
+.iconique > div > img{
+    width: 100%;
+    height: auto;
+}
+
+.iconique > div >p{
+  background-color: #ea4d4d;
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 5px 5px 0px #101d39, 10px 10px 0px #d6e10a;
+  font-family: "Roboto", sans-serif;
+  max-width: 600px;
+  text-align: center;
+  margin-top: 10px;
+  z-index: 1;
+}
+
+/*------------------------------------------------ fin Image personnages iconique Nintendo.---------------------------------------------*/
+
+.texte{
     background-color: #ea4d4d;
     color: #fff;
     padding: 20px;
@@ -32,137 +380,400 @@ p{
     text-align: center;
     margin-top: 10px;
     z-index: 1;
- }
- 
+    margin-bottom: 25px;
+  }
 }
-
+/*------------------------------------------------ Fin Version mobile.------------------------------------------------------------*/
 /*---------------------------------------------------- à partir de ci-dessous c'est version tablette.-----------------------------------*/
 
-@media(min-width:600px) and (max-width:899px){
-   
-/*---------------------------------------------------- Image personnages Nintendo.------------------------------------------------------*/
+@media (min-width:600px) and (max-width:900px){      
 
-    #présentation > img{
-        width: 100%;
-        height: 50vw;
-        object-fit: cover;
-        
+    body{
+        background-color: #101d39;
+        color: #f1f1f1;
+    }
+    
+    
+    h1,h2{
+        text-align: center;
+        margin-top: 25px;
+        margin-bottom: 15px;
     }
 
-/*---------------------------------------------------- Fin image personnages Nintendo---------------------------------------------------*/
+    h1{
+        border: 3px solid yellow;
+    }
 
-body{
-    background-color: #062050;
-    color: rgb(234, 228, 228);
-}
+    
 
-h1{
-    text-align: center;
-    font-size: 34px;
-}
+/*---------------------------------------------------- Image personnages Nintendo.------------------------------------------------------*/
 
-h2{
-    text-align: center;
-}
-
-p{
-    font-size: 20px;
-}
-
-img{
-    border: 5px solid #f1f1f1;
+.présentation > img {
+    object-fit: cover;
     width: 100%;
-    height: ;
+    height: 50vw;
+    border: 3px solid #f1f1f1;
+    margin-left: 5px;
+    margin-top: 110px;
+    
 }
-/*------------------------------------------------------texte et image Nintendo---------------------------------------------------------*/
+
+/*------------------------------------------------ fin Image personnages Nintendo.------------------------------------------------------*/
+/*------------------------------------------------ texte et image Nintendo.-------------------------------------------------------------*/
+
 .débuts{
     display: flex;
     flex-direction: row;
 }
-/*------------------------------------------------------fin texte image Nintendo--------------------------------------------------------*/
+
+.débuts > img{
+    width: 75%;
+    height: auto;
+    margin-left: 20px;
+}
+
+.débuts > div > p{
+  height: 50vw;
+  background-color: #ea4d4d;
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 5px 5px 0px #101d39, 10px 10px 0px #d6e10a;
+  font-family: "Roboto", sans-serif;
+  max-width: 600px;
+  text-align: center;
+  margin-top: 10px;
+  z-index: 1;
+}
+
+/*------------------------------------------------ fin texte et image Nintendo.---------------------------------------------------------*/
+/*------------------------------------------------ Image consoles Nintendo.-------------------------------------------------------------*/
+
 .console > div > img{
-    width: 500px;
-    height: 25vw;
-}
-
-
-
-.débuts > div > img{
-    width: 400px;
-    height: 25vw;
-    margin-right: 20px;
+    width: 80%;
+    height: 30vw;
     
 }
+
+.console{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  
+}   
+
+.console > div > p{
+  width: 50%;
+  margin-left: 50px;
+  background-color: #ea4d4d;
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 5px 5px 0px #101d39, 10px 10px 0px #d6e10a;
+  font-family: "Roboto", sans-serif;
+  max-width: 600px;
+  text-align: center;
+  margin-top: 10px;
+  z-index: 1;
 }
 
-@media(min-width:900px){
-    
-    body{
-        background-color: #062050;
-        color: #f1f1f1;
-    }
+.container1{
+  width: 45%;           /* Chaque élément occupe environ la moitié de la ligne */
+  margin: 10px;         /* Espace entre les éléments */
+  padding: 20px;        /* Espace interne dans chaque élément */
+  text-align: center;   /* Centrer le texte */
+  box-sizing: border-box; /* Inclut les marges et padding dans la largeur */
+}
 
-    #présentation > img{   
+
+.container2{
+  width: 45%;           /* Chaque élément occupe environ la moitié de la ligne */
+  margin: 10px;         /* Espace entre les éléments */
+  padding: 20px;        /* Espace interne dans chaque élément */
+  text-align: center;   /* Centrer le texte */
+  box-sizing: border-box; /* Inclut les marges et padding dans la largeur */
+}
+
+
+.container3{
+  width: 45%;           /* Chaque élément occupe environ la moitié de la ligne */
+  margin: 10px;         /* Espace entre les éléments */
+  padding: 20px;        /* Espace interne dans chaque élément */
+  text-align: center;   /* Centrer le texte */
+  box-sizing: border-box; /* Inclut les marges et padding dans la largeur */
+}
+
+
+.container4{
+  width: 45%;           /* Chaque élément occupe environ la moitié de la ligne */
+  margin: 10px;         /* Espace entre les éléments */
+  padding: 20px;        /* Espace interne dans chaque élément */
+  text-align: center;   /* Centrer le texte */
+  box-sizing: border-box; /* Inclut les marges et padding dans la largeur */
+}
+
+
+/*------------------------------------------------ fin Image consoles Nintendo.---------------------------------------------------------*/
+/*------------------------------------------------ Image personnages iconique Nintendo.-------------------------------------------------*/
+
+.iconique > div > img{
     width: 100%;
-    height: 37vw;
-    object-fit: cover;}
+    height: 30vw;
+}
 
-    h1{
-        text-align: center;
-        font-size: 44px;
-        border: 25px solid yellow;
-    }
+.iconique{
+  display: flex;
+  flex-direction: row;
+}
 
-    .débuts{
-        display: flex;
-        flex-direction: row-reverse;
-        text-align: center;
-    }
-    .débuts > div > img{
-        width: 100%;
-        margin-right: 20px;
-    
-    }
+.iconique > div >p {
+  width: 50%;
+  background-color: #ea4d4d;
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 5px 5px 0px #101d39, 10px 10px 0px #d6e10a;
+  font-family: "Roboto", sans-serif;
+  max-width: 600px;
+  text-align: center;
+  margin-top: 10px;
+  z-index: 1;
+}
 
-    h2{
-        text-align: center;
-        border: 5px solid red;
-        font-size: 28px;
-    }
-    
-    .console{
-        display: flex;
-        
-    }
+.personnage1{
+  flex-direction: row;
+  margin-left: 40px; 
+  margin-right: 40px; 
+}
 
-    .console > div{
-       margin-right: 30px;
-       margin-top: 50px;
-    }
+.personnage2{
+  flex-direction: row;
+  margin-left: 40px;
+  margin-right: 40px;  
+}
 
-    .console > .container4 > img{
-        width: 100%;
-        height: 15vw;
-        
-    }
-
-    .iconique{
-        display: flex;    
-    }
-
-    .iconique > img{
-        width: 100%;
-        height: 15vw;
-    }
+.personnage3{
+  flex-direction: column;
+  margin-left: 40px;
+  margin-right: 40px;
+ }
 
     
-        
-        
-        
     
+
+
+/*------------------------------------------------ fin Image personnages iconique Nintendo.---------------------------------------------*/
+
+
+
+
+
+.vidéo{
+    margin-left: 5px;
+    margin-top: 20px;
+    height: auto;
+  }
+
+.texte{
+  
+    background-color: #ea4d4d;
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 5px 5px 0px #101d39, 10px 10px 0px #d6e10a;
+    font-family: "Roboto", sans-serif;
+    max-width: 600px;
+    text-align: center;
+    margin-top: 10px;
+    z-index: 1;
+  }
+}
+
+
+/*------------------------------------------------ Fin Version tablette.----------------------------------------------------------------*/
+
+/*------------------------------------------------ Début version pc.------------------------------------------------------------*/
+
+@media (min-width:900px) and (max-width:4000px){      
+
+  body{
+      background-color: #101d39;
+      color: #f1f1f1;
+  }
+  
+  
+  h1,h2{
+      margin-top: 32px;
+      margin-bottom: 32px;
+  }
+
+  h1{
+      border: 3px solid yellow;
+  }
+
+  
+
+/*---------------------------------------------------- Image personnages Nintendo.------------------------------------------------------*/
+
+.présentation > img {
+  object-fit: cover;
+  width: 100%;
+  height: 50vw;
+  border: 3px solid #f1f1f1;
+  margin-top: 110px;
+  
 }
 
 
 
+/*------------------------------------------------ fin Image personnages Nintendo.------------------------------------------------------*/
+/*------------------------------------------------ texte et image Nintendo.-------------------------------------------------------------*/
+
+.débuts{
+  display: flex;
+  flex-direction: row;
+}
+
+.débuts > img{
+  width: 100%;
+  height: auto;
+  margin-left: 20px;
+}
+
+.débuts > div > p{
+  height: 50vw;
+  text-align: center;
+  background-color: #ea4d4d;
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 5px 5px 0px #101d39, 10px 10px 0px #d6e10a;
+  font-family: "Roboto", sans-serif;
+  max-width: 600px;
+  text-align: center;
+  margin-top: 10px;
+  z-index: 1;
+}
+
+/*------------------------------------------------ fin texte et image Nintendo.---------------------------------------------------------*/
+/*------------------------------------------------ Image consoles Nintendo.-------------------------------------------------------------*/
+
+.console > div > img{
+  width: 100%;
+  height: 25vw;
+  margin-left: 15px;
+  
+}
+
+.console > div >p{
+  background-color: #ea4d4d;
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 5px 5px 0px #101d39, 10px 10px 0px #d6e10a;
+  font-family: "Roboto", sans-serif;
+  max-width: 600px;
+  text-align: center;
+  margin-top: 10px;
+  z-index: 1;
+}
+
+.console{
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+}   
+  
+
+.container1{
+  flex-direction: row;
+  margin-left: 20px; 
+  margin-right: 40px;
+}
+
+.container2{
+  flex-direction: row;
+  margin-left: 40px; 
+  margin-right: 40px;
+}
+
+.container3{
+  flex-direction: row;
+  margin-left: 40px; 
+  margin-right: 40px;
+}
+
+.container4{
+  flex-direction: row;
+  margin-left: 40px; 
+  margin-right: 40px;
+}
+
+/*------------------------------------------------ fin Image consoles Nintendo.---------------------------------------------------------*/
+/*------------------------------------------------ Image personnages iconique Nintendo.-------------------------------------------------*/
+
+.iconique > div > img{
+  width: 100%;
+  height: 25vw;
+}
+
+.iconique{
+  display: flex;
+  flex-direction: row;
+}
+
+.iconique > div >p{
+  background-color: #ea4d4d;
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 5px 5px 0px #101d39, 10px 10px 0px #d6e10a;
+  font-family: "Roboto", sans-serif;
+  max-width: 600px;
+  text-align: center;
+  margin-top: 10px;
+  z-index: 1;
+}
+
+.personnage1{
+  flex-direction: row;
+  margin-left: 120px; 
+  margin-right: 80px;
+}
+
+.personnage2{
+  flex-direction: row;
+  margin-left: 80px;
+  margin-right: 80px; 
+}
+
+.personnage3{
+  flex-direction: row;
+  margin-left: 80px;
+  margin-right: 80px; 
+}
+
+/*------------------------------------------------ fin Image personnages iconique Nintendo.---------------------------------------------*/
+
+.vidéo{
+  margin-left: 5px;
+  margin-top: 60px;
+}
+
+.texte{
+  margin-left: 475px;
+  background-color: #ea4d4d;
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 5px 5px 0px #101d39, 10px 10px 0px #d6e10a;
+  font-family: "Roboto", sans-serif;
+  max-width: 600px;
+  text-align: center;
+  margin-top: 10px;
+  z-index: 1;
+}
+}
+/*---------------------------------------------Fin version pc---------------------------------------------------------------------------*/
 
 
