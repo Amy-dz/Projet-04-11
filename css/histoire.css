@@ -280,7 +280,7 @@ footer {
 
 /* -------------------------------------------------- version mobile ci-dessous---------------------------------------------------------*/
 
-@media (min-width:300px) and (max-width:600px){      
+@media (min-width:0px) and (max-width:600px){      
 
     body{
         background-color: black;
