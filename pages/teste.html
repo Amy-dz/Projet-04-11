@@ -8,54 +8,37 @@
   <link rel="stylesheet" href="../css/teste.css">
 </head>
 <body>
-  <div class="reservation-container">
-    <section class="reservation-form">
-      <h1>Réservez vos billets</h1>
-      <form action="#" method="POST" class="form-reservation">
-        
-        <!-- Informations Personnelles -->
-        <div class="form-row">
-          <div class="form-group">
-            <label for="prenom">Prénom</label>
-            <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
-          </div>
-          <div class="form-group">
-            <label for="nom">Nom</label>
-            <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
-          </div>
-        </div>
+  <section class="formul">
+    <div class="formi">
+      <form action="#" method="POST" class="form-container"></form>
+      <label for="name">Nom :</label>
+      <input type="text" id="name" name="name" placeholder="Votre nom" required>
+    </div>
+  
+    <div class="formi">
+      <label for="email">Email :</label>
+      <input type="email" id="email" name="email" placeholder="Votre email" required>
+    </div>
+  
+    <div class="formi">
+      <label for="question1">Date de la visite :</label>
+      <input type="date" id="date" name="date" required>
+    </div>
+  
+    <div class="formi">
+      <label for="question2">Heure de la visite :</label>
+      <input type="time" id="time" name="time" required>
+    </div>
 
-        <div class="form-row">
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="Votre email" required>
-          </div>
-          <div class="form-group">
-            <label for="telephone">Téléphone</label>
-            <input type="tel" id="telephone" name="telephone" placeholder="Votre numéro de téléphone" required>
-          </div>
-        </div>
-
-        <!-- Options de Billets -->
-        <div class="form-row">
-          <div class="form-group">
-            <label for="type-billet">Type de billet</label>
-            <select id="type-billet" name="type-billet" required>
-              <option value="standard">Billet Standard</option>
-              <option value="premium">Billet Premium</option>
-              <option value="vip">Billet VIP</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="quantite-billets">Nombre de billets</label>
-            <input type="number" id="quantite-billets" name="quantite-billets" min="1" value="1" required>
-          </div>
-        </div>
-
-        <!-- Bouton de soumission -->
-        <button type="submit">Réserver</button>
-      </form>
-    </section>
-  </div>
+    <div class="formi">
+      <label for="question2">Message ou demande particulière :</label>
+      <textarea id="message" name="message" rows="4" placeholder="Des informations supplémentaires..." required></textarea>
+    </div>
+  
+    <!-- Bouton de soumission -->
+    <div class="formi">
+      <button type="submit">Envoyer</button>
+    </div>
+  </section>  
 </body>
 </html>
