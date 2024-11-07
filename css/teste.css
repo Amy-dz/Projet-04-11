@@ -1,27 +1,47 @@
-/* Section Parallax */
-.parallax-container {
-
-  position: relative;
-  width: 100%;
-  height: 100vh; /* Hauteur de la section égale à la hauteur de l'écran */
-  overflow: hidden;
-}
-
-.parallax-container1 {
-  position: relative;
-  width: 100%;
-  height: 100vh; /* Hauteur de la section égale à la hauteur de l'écran */
-  overflow: hidden;
-}
-.parallax {
+.container .btn{
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  color: black;
+  font-weight: 1000;
+  font-family: "Roboto", sans serif;
+  background-color: #d6e10a;
+  padding: 15px 50px;
+  z-index: 0;
+}
+.btn::after{
+  content: "";
+  z-index: -1;
+  position: absolute;
   width: 100%;
   height: 100%;
-  background-image: url('../img/rasm/shiigeru.jpg'); /* Image de fond */
-  background-attachment: fixed; /* Effet parallax */
-  background-position: center 110px;
-  background-size: cover; /* L'image couvre toute la section */
-  z-index: -1; /* L'image reste derrière le contenu */
+  background-color:#d6e10a;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+.btn::before{
+  content: '';
+  background: linear-gradient(
+    45deg,
+    #ea4d4d, #d6e10a, #ea4d4d, #d6e10a,
+    #ea4d4d, #d6e10a, #ea4d4d, #d6e10a
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 600%;
+  z-index: -1;
+  width: calc(100% + 4px);
+  height:  calc(100% + 4px);
+  filter: blur(8px);
+  animation: glowing 20s linear infinite;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+  opacity: 0;
 }
