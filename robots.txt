@@ -1,0 +1,11 @@
+User-agent: *
+
+Disallow: /error404.html
+Disallow: /partenariat.html
+Disallow: /politiquedeco.html
+Disallow: /mentionslegales.html
+
+
+Allow: /
+
+Sitemap: https://back-to-pixel-festival.fr/sitemap.xml
