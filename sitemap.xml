@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.back-to-pixel-festival.fr/schemas/sitemap/0.9">
+
+  <!-- Page d'accueil -->
+  <url>
+    <loc>https://www.back-to-pixel-festival.fr/</loc>
+    <priority>1.0</priority>
+    <changefreq>daily</changefreq>
+  </url>
+
+  <!-- Page des tournois -->
+  <url>
+    <loc>https://www.back-to-pixel-festival.fr/tournois</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+ <!-- Page exposition-->
+  <url>
+    <loc>https://www.back-to-pixel-festival.fr/exposition</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+ <!-- Page histoire de nintendo -->
+  <url>
+    <loc>https://www.back-to-pixel-festival.fr/histoire-de-Nintendo</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+ <!-- Page rencontre -->
+  <url>
+    <loc>https://www.back-to-pixel-festival.fr/rencontre</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+
+  <!-- Page atelier -->
+  <url>
+    <loc>https://www.back-to-pixel-festival.fr/atelier</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+    <!-- Partenariat et sponsor -->
+  <url>
+    <loc>https://www.back-to-pixel-festival.fr/partenariat-sponsor</loc>
+    <priority>0.5</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+   <!-- Page programme -->
+  <url>
+    <loc>https://www.back-to-pixel-festival.fr/programme</loc>
+    <priority>0.3</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <!-- Politique de confidentialité -->
+  <url>
+    <loc>https://www.back-to-pixel-festival.fr/politique-de-confidentialité</loc>
+    <priority>0.3</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <!-- Mentions légales -->
+  <url>
+    <loc>https://www.back-to-pixel-festival.fr/mentions-légales</loc>
+    <priority>0.3</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+
+</urlset>
