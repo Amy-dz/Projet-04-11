@@ -1,10 +1,18 @@
 * {
-  margin: 0%;
-  padding: 0%;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
   /* text-decoration: none;
   list-style: none; */
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto";
+}
+
+html,
+body {
+  /* overflow-x: hidden; */
+  width: 100%;
+  height: 100%;
+  background-color: #1a1a1a;
 }
 
 header {
@@ -217,11 +225,472 @@ header {
 }
 
 /***********************************************FIN NAVBAR*******************************************************************/
+/******************************************** HERO ***************************************************************/
+/* Styles pour la section hero */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  overflow: hidden; /* Ajouté pour limiter tout débordement */
+}
+
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%; /* S'assurer que la vidéo occupe toute la largeur */
+  height: 100%; /* S'assurer que la vidéo occupe toute la hauteur */
+  object-fit: cover; /* Maintient l'aspect ratio */
+  transform: translate(-50%, -50%); /* Centrer la vidéo */
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative; /* Pour s'assurer que le contenu est au-dessus de la vidéo */
+  z-index: 1; /* Permet d'assurer que le contenu soit au-dessus de l'image de fond */
+}
+
+.hero h1 {
+  font-size: 2rem;
+  margin: 0;
+  font-family: "Press Start 2P", sans-serif;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  margin-top: 1rem;
+  font-family: "Roboto" sans-serif;
+}
+
+.cta-button {
+  padding: 12px 24px;
+  background-color: #ff5f00;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 18px;
+  margin-top: 20px;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  font-family: "Press Start 2P", sans-serif;
+}
+
+.cta-button:hover {
+  background-color: #ff3f00;
+}
+/*************************************************TOURNOIS*******************************************/
+/* Section Tournois */
+
+.title-tournois {
+  padding: 20px 0;
+  margin-top: 20px;
+  background-color: #1a1a1a;
+  color: #fdfdfd;
+  font-size: 30px;
+  text-align: center;
+  font-family: "Press Start 2P", sans-serif;
+}
+
+.slider {
+  background-color: #1a1a1a;
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  animation: slideAnimation 12s infinite; /* Adjusted for 4 images */
+}
+
+@keyframes slideAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(0);
+  }
+  28% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(-100%);
+  }
+  53% {
+    transform: translateX(-200%);
+  }
+  75% {
+    transform: translateX(-200%);
+  }
+  78% {
+    transform: translateX(-300%);
+  }
+  100% {
+    transform: translateX(-300%);
+  }
+}
+
+.slide {
+  min-width: 100%;
+  height: 78vh;
+  transition: opacity 0.5s ease-in-out;
+  display: flex;
+  justify-content: center; /* Center the image */
+  align-items: center; /* Center the image vertically */
+}
+
+.slide img {
+  width: 100%; /* Change this percentage to adjust image size */
+  height: 100%;
+  display: block;
+  /* object-fit: cover; */
+  object-fit: contain;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+#slide1:checked ~ .slides {
+  transform: translateX(0);
+}
+
+#slide2:checked ~ .slides {
+  transform: translateX(-100%);
+}
+
+#slide3:checked ~ .slides {
+  transform: translateX(-200%);
+}
+
+#slide4:checked ~ .slides {
+  transform: translateX(-300%);
+}
+
+.navigation {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.navigation label {
+  cursor: pointer;
+  height: 10px;
+  width: 10px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 5px;
+  transition: background-color 0.3s;
+}
+
+input[type="radio"]:checked + .navigation label {
+  background-color: #717171;
+}
+
+/* Optional: Hover effect for navigation dots */
+.navigation label:hover {
+  background-color: #888;
+}
+
+/* Styles pour le bouton central "Plus d'info" */
+.button-container {
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  background-color: #1a1a1a;
+}
+
+.btn-more-info {
+  text-decoration: none;
+  font-family: "Press Start 2P", sans-serif;
+  background-color: #ff0000;
+  color: #333;
+  padding: 10px 20px;
+  border: 3px solid #333;
+  border-radius: 50px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-more-info:hover {
+  background-color: #333;
+  color: #ff0000;
+}
+
+/*************************************************TOURNOIS*******************************************/
+/*********************************************************** CONF SHIGERU **********************************************************/
+
+@keyframes zoomInUp {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05) translateY(-10px);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Effet de rebond pour le bouton */
+.conference-content .cta-button {
+  animation: bounce 1.5s infinite alternate ease-in-out;
+  animation-delay: 1.5s;
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Styles de la section */
+.animated-section {
+  background: #1a1a1a;
+  color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* Titre */
+.animated-section h2 {
+  color: #ff3636;
+  font-size: 2em;
+  margin-bottom: 20px;
+  animation: pixelFadeIn 1s ease-in-out forwards;
+  font-family: "Press Start 2P", sans-serif;
+}
+
+/* Style pour le conteneur de la photo */
+.photo-container {
+  display: inline-block;
+  margin: 20px 0;
+  padding: 15px;
+  background-color: #333;
+  border: 15px solid #ff1900; /* Bordure rappelant le thème rétro */
+  border-radius: 10px;
+  animation: pixelFadeIn 1.2s ease-in-out forwards;
+}
+
+.photo {
+  width: 600px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 4px;
+  filter: grayscale(50%);
+  transition: transform 0.3s, filter 0.3s;
+}
+
+.photo-container:hover .photo {
+  transform: scale(1.05);
+  filter: grayscale(0%);
+}
+
+figcaption {
+  color: #ffffff;
+  font-size: 0.9em;
+  margin-top: 8px;
+  font-style: italic;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Style du texte de la section */
+.conference-content p {
+  color: #ffffff;
+  font-size: 1.2em;
+  font-family: "Roboto", sans-serif;
+  max-width: 600px;
+  margin: 0 auto 20px;
+  animation: pixelFadeIn 1.5s ease-in-out forwards;
+  animation-delay: 0.5s;
+}
+
+.animated-section {
+  position: relative;
+  overflow: hidden;
+}
+/* Style du bouton */
+.conference-content .cta-button {
+  background-color: #ff0400;
+  color: #ffffff;
+  padding: 12px 24px;
+  border: none;
+  font-size: 1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  animation: bounceAndPixel 2s ease-in-out infinite alternate;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 15px;
+  font-family: "Press Start 2P", sans-serif;
+}
+
+/* Effet pixelisé pour l'animation de fade-in */
+@keyframes pixelFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(1.2);
+    filter: blur(5px) contrast(0.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0) contrast(1);
+  }
+}
+
+/* Animation de rebond pour le bouton */
+@keyframes bounceAndPixel {
+  0% {
+    transform: scale(1) translateY(0);
+    box-shadow: 0 0 10px #ff4c30;
+  }
+  100% {
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 0 20px #ee2121, 0 0 30px #ff2c14;
+  }
+}
+
+/*********************************************************** FIN CONF SHIGERU **********************************************************/
+
+/* Styles généraux */
+.section-title {
+  font-family: "Press Start 2P", sans-serif;
+  text-align: center;
+  color: #f0f0f0;
+  font-size: px;
+  margin: 20px 0;
+}
+
+.exposition,
+.histoire {
+  padding: 20px;
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+/* Exposition de Console */
+.exposition {
+  padding: 20px;
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+.exposition-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.exposition-item {
+  width: 100%;
+  background-color: #333;
+  padding: 15px;
+  text-align: center;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.exposition-item:hover {
+  transform: scale(1.05);
+}
+
+.exposition-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.exposition-item p {
+  font-size: 1.2rem;
+}
+
+/* Responsivité */
+@media (min-width: 600px) {
+  .exposition-item {
+    width: calc(50% - 20px); /* Deux items par ligne sur tablette */
+  }
+}
+
+@media (min-width: 992px) {
+  .exposition-item {
+    width: calc(25% - 20px); /* Quatre items par ligne sur ordinateur */
+  }
+}
+/* Histoire de Nintendo */
+.histoire-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.histoire-content p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+.histoire-content img {
+  width: 80%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsivité */
+@media (min-width: 768px) {
+  .exposition-item {
+    width: calc(25% - 20px);
+  }
+  .histoire-content {
+    flex-direction: row;
+  }
+  .histoire-content p {
+    flex: 1;
+    margin-right: 20px;
+    text-align: left;
+  }
+  .histoire-content img {
+    flex: 1;
+  }
+}
 
 /*************************************************FOOTER*******************************************************************/
 
 /* Style de base du footer */
 footer {
+  margin-top: 200px;
   background-color: #222;
   color: #f0f0f0;
   text-align: center;
@@ -275,4 +744,108 @@ footer {
   font-size: 0.8em;
   margin-top: 15px;
 }
-/************************************************* FIN FOOTER*******************************************************************/
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .title-tournois {
+    padding-top: 10px;
+    margin-bottom: 0px;
+    color: #fdfdfd;
+    font-size: 25px;
+    text-align: center;
+    font-family: "Press Start 2P", sans-serif;
+  }
+  .cta-button {
+    font-size: 10px;
+  }
+
+  .conference-content .cta-button {
+    font-size: 10px;
+  }
+
+  .photo {
+    width: 450px;
+  }
+
+  .photo-container {
+    margin: 20px 0;
+    padding: 15px;
+  }
+  .animated-section h2 {
+    color: #ff3636;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    animation: pixelFadeIn 1s ease-in-out forwards;
+    font-family: "Press Start 2P", sans-serif;
+  }
+
+  .hero h1 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .cta-button {
+    font-size: 10px;
+  }
+
+  .conference-content .cta-button {
+    font-size: 10px;
+  }
+
+  .photo {
+    width: 300px;
+  }
+
+  .photo-container {
+    margin: 20px 0;
+    padding: 15px;
+  }
+  .animated-section h2 {
+    color: #ff3636;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    animation: pixelFadeIn 1s ease-in-out forwards;
+    font-family: "Press Start 2P", sans-serif;
+  }
+}
+
+@media (max-width: 390px) {
+  .hero {
+    padding: 60px 10px;
+  }
+
+  .cta-button {
+    font-size: 10px;
+  }
+
+  .conference-content .cta-button {
+    font-size: 10px;
+  }
+
+  .conference-content p {
+    font-size: 15px;
+  }
+
+  .photo {
+    width: 200px;
+  }
+
+  .photo-container {
+    margin: 20px 0;
+    padding: 15px;
+  }
+  .animated-section h2 {
+    color: #ff3636;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    animation: pixelFadeIn 1s ease-in-out forwards;
+    font-family: "Press Start 2P", sans-serif;
+  }
+  .hero h1 {
+    font-size: 1rem;
+  }
+  .hero-content p {
+    font-size: 15px;
+  }
+}
