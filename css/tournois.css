@@ -1,11 +1,19 @@
 * {
-  padding: 0%;
-  margin: 0%;
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
   font-family: "roboto", sans-serif;
 }
 
 /*********************************************** NAVBAR*******************************************************************/
+
+html,
+body {
+  /* overflow-x: hidden; */
+  width: 100%;
+  height: 100%;
+  background-color: #1a1a1a;
+}
 
 header {
   position: fixed;
@@ -218,25 +226,110 @@ header {
 }
 
 /***********************************************FIN NAVBAR*******************************************************************/
-
-h1 {
+.tt {
   margin: 10px;
+  font-family: "Press Start 2P", serif;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #001aff; /* Bleu clair pour le texte */
+  text-shadow: 0 0 10px #00bfff, /* Ombre bleu clair */ 0 0 20px #00bfff,
+    0 0 30px #00bfff, 0 0 40px #00bfff, 0 0 10px #ffff00,
+    /* Ombre jaune */ 0 0 20px #ffff00, 0 0 30px #ffff00; /* Ombre jaune éclatante */
+  animation: pixel-glitch 1.5s infinite alternate;
 }
 
-.imgfond {
-  background-image: url("../img/tournois/imgfond.jpg"); /* Remplace par le chemin de ton image */
-  background-size: cover; /* Couvre toute la surface */
-  background-position: center; /* Centre l'image */
-  height: 100vh; /* Hauteur de la fenêtre */
-  display: flex; /* Permet d'aligner le contenu */
-  flex-direction: column; /* Colonne pour centrer le texte */
-  justify-content: center; /* Centre verticalement */
-  align-items: center; /* Centre horizontalement */
-  color: white; /* Couleur du texte */
+/* Animation de glitch avec effet de pixels */
+@keyframes pixel-glitch {
+  0% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+  25% {
+    transform: translateX(-2px) scale(1.05);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateX(2px) scale(1.05);
+    opacity: 0.8;
+  }
+  75% {
+    transform: translateX(-2px) scale(1.1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.yoyo {
+  font-size: 20px;
+  padding: 20px;
+}
+
+/* Section parallax */
+.parallax {
+  position: relative;
+  background-image: url("../img/tournois/imgfond.jpg"); /* Image de fond */
+  background-attachment: fixed; /* L'effet parallax */
+  background-size: cover; /* L'image couvre toute la section */
+  background-position: center; /* L'image est centrée */
+  height: 100vh; /* Hauteur de la section = 100% de la fenêtre du navigateur */
+  color: rgb(255, 255, 255);
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Ombre pour le texte */
   padding: 20px; /* Espacement intérieur */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   text-align: center;
 }
+
+.parallax-content {
+  z-index: 2; /* Assure que le texte est au-dessus de l'image */
+  padding: 20px;
+}
+
+.parallax .tt {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+/* Section d'information normale */
+.info-section {
+  padding: 50px;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+.info-section h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.info-section p {
+  font-size: 1.2em;
+}
+
+/* Responsivité pour les petits écrans */
+@media (max-width: 768px) {
+  .parallax .h1 {
+    font-size: 1.2em; /* Taille du texte réduite sur mobile */
+  }
+}
+
+@media (max-width: 500px) {
+  .parallax h1 {
+    font-size: 5px; /* Taille du texte réduite sur mobile */
+  }
+}
+/* .info-section h2 {
+    font-size: 5px;
+  }
+  .info-section p {
+    font-size: 50px;
+  }
+} */
 
 .slogan {
   background-color: rgba(
@@ -265,36 +358,422 @@ h1 {
   background-color: #767676; /* Couleur lors du survol */
 }
 
-.container {
-  display: flex; /* Utilisation de flexbox pour les colonnes */
-  justify-content: space-between; /* Espacement égal entre les colonnes */
+/* Section des tournois */
+.tournois {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 30px;
+  gap: 30px;
+}
+
+/* Card de tournoi */
+.tour {
+  background-color: rgb(0, 0, 0);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
   padding: 20px;
-  max-width: 1200px; /* Largeur maximale de la container */
-  margin: 0 auto; /* Centre la container */
-}
-
-.tableau {
-  background-color: #000000; /* Couleur de fond des colonnes */
-  border: 1px solid #ddd; /* Bordure autour des colonnes */
-  border-radius: 8px; /* Coins arrondis */
-  padding: 20px; /* Espacement intérieur */
-  flex: 1; /* Chaque colonne prend un espace égal */
-  margin: 0 10px; /* Espacement entre les colonnes */
-}
-
-.tableau h2 {
-  margin-bottom: 10px; /* Espacement sous le titre */
-}
-
-.tableau p {
-  color: #555; /* Couleur du texte */
-}
-
-h2 {
   text-align: center;
-  margin: 50px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.tour h2 {
+  font-size: 1.5em;
+  color: #fffb00;
+  margin-bottom: 10px;
+  font-family: "Press Start 2P", serif;
+}
+
+.tour .date {
+  font-size: 1.2em;
+  color: #c33434;
+  margin-bottom: 15px;
+}
+
+.tour .description {
+  font-size: 1em;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.tour:hover {
+  transform: translateY(-10px); /* Élève la carte au survol */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Ombre plus marquée */
+}
+
+/* Bouton d'inscription */
+.bouton {
+  background-color: #c33434;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.bouton:hover {
+  background-color: #a5a5a5;
+}
+
+@media (max-width: 500px) {
+  .tournois {
+    padding: 4px;
+  }
+}
+
+/* Section Introduction */
+.intro {
+  background-color: #fff;
+  padding: 40px;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.intro h2 {
+  font-size: 2em;
+  color: #000000;
+  margin-bottom: 20px;
+  font-family: "roboto", sans-serif;
+}
+
+/* Section Règles */
+.rules {
+  background-color: #fff;
+  padding: 40px;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.rules h2 {
+  font-size: 2em;
+  color: #000000;
+  margin-bottom: 20px;
+  font-family: "roboto", sans-serif;
+}
+
+.rules ul {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+.rules li {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+/* Section Modalités d'Inscription */
+.modalities {
+  background-color: #fff;
+  padding: 40px;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.modalities h2 {
+  font-size: 2em;
+  color: #000000;
+  margin-bottom: 20px;
+  font-family: "roboto", sans-serif;
+}
+
+.modalities ol {
+  padding-left: 20px;
+}
+
+.modalities li {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+.modalities .responsive-img {
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+}
+
+/* Section Prix */
+.prizes {
+  background-color: #fff;
+  padding: 40px;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.prizes h2 {
+  font-size: 2em;
+  color: #000000;
+  margin-bottom: 20px;
+  font-family: "roboto", sans-serif;
+}
+
+.prizes ul {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+.prizes li {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+/* Section Conditions de Participation */
+.conditions {
+  background-color: #fff;
+  padding: 40px;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.conditions h2 {
+  font-size: 2em;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+.conditions ul {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+.conditions li {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+/* @media (max-width: 500px) {
+  .intro {
+    padding: 5px;
+  }
+  .intro h2 {
+    font-size: 5px;
+  }
+  .intro p {
+    font-size: 5px;
+  }
+  .container {
+    padding: 5px;
+  }
+  .container h2 {
+    font-size: 5px;
+  }
+  .container p {
+    font-size: 5px;
+  }
+  .container li {
+    font-size: 5px;
+  }
+  .rules {
+    padding: 5px;
+  }
+  .modalities {
+    padding: 5px;
+  }
+} */
+/********************************************* Base Styles for Scoreboard ************************************************************/
+/* Style général du tableau */
+.scoreboard {
+  margin: 50px auto;
+  padding: 20px;
+  max-width: 1000px;
+  background-color: #121212;
+  border-radius: 15px;
+  text-align: center;
+}
+
+/* Titre */
+.scoreboard-title {
+  font-size: 2em;
+  margin-bottom: 30px;
+  margin: 10px;
+  font-family: "Press Start 2P", serif;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  position: relative;
+  animation: neon 1.5s ease-in-out infinite alternate;
+}
+
+/* Animation du texte Néon Bleu */
+@keyframes neon {
+  0% {
+    text-shadow: 0 0 5px #00d4ff, 0 0 10px #00d4ff, 0 0 20px #00d4ff,
+      0 0 40px #00d4ff, 0 0 80px #00d4ff, 0 0 90px #00d4ff, 0 0 100px #00d4ff;
+  }
+  50% {
+    text-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff, 0 0 30px #00d4ff,
+      0 0 60px #00d4ff, 0 0 120px #00d4ff, 0 0 150px #00d4ff, 0 0 180px #00d4ff;
+  }
+  100% {
+    text-shadow: 0 0 5px #00d4ff, 0 0 10px #00d4ff, 0 0 20px #00d4ff,
+      0 0 40px #00d4ff, 0 0 80px #00d4ff, 0 0 90px #00d4ff, 0 0 100px #00d4ff;
+  }
+}
+
+.textegrille {
+  color: white;
+}
+
+/* Grille des scores */
+.scoreboard-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 colonnes par défaut */
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Bloc dans la grille */
+.scoreboard-block {
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.player-photo {
+  width: 80px;
+  height: 100px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.scoreboard-block p {
+  font-size: 1.2em;
+  color: #f7ff00;
+}
+
+/* Effet de survol */
+.scoreboard-block:hover {
+  background-color: #444;
+  cursor: pointer;
+}
+
+/* Responsive pour les tablettes */
+@media (max-width: 1024px) {
+  .scoreboard-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur tablette */
+  }
+}
+
+/* Responsive pour les téléphones */
+@media (max-width: 768px) {
+  .scoreboard-grid {
+    grid-template-columns: 1fr; /* 1 colonne sur téléphone */
+  }
+
+  .scoreboard-title {
+    font-size: 1.5em; /* Ajuste la taille du titre */
+  }
+
+  .scoreboard-block p {
+    font-size: 1em; /* Réduit la taille du texte sur petit écran */
+  }
+}
+
+/* @media (max-width: 769px) {
+  .scoreboard-title {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 570px) {
+  .scoreboard-title {
+    font-size: 15px;
+  }
+} */
+/******************************************************FIN SCORE ******************************************/
+/* Formulaire d'inscription */
+.reservation {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  margin: 200px;
+}
+
+.form {
+  text-align: center;
+}
+
+/* Formulaire */
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 15px;
+}
+
+input,
+select {
+  padding: 10px;
+  font-size: 1em;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button.submit-btn {
+  padding: 15px;
+  background-color: #3498db;
+  color: #fff;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button.submit-btn:hover {
+  background-color: #2980b9;
+}
+
+/* Validation visuelle pour les champs obligatoires */
+input:invalid,
+select:invalid {
+  border-color: #e74c3c;
+}
+
+input:valid,
+select:valid {
+  border-color: #2ecc71;
+}
+
+/* Responsive pour les petits écrans */
+@media (max-width: 768px) {
+  .registration {
+    width: 90%;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  input,
+  select {
+    font-size: 0.9em;
+  }
+
+  button.submit-btn {
+    font-size: 1em;
+  }
+}
 /*************************************************FOOTER*******************************************************************/
 
 /* Style de base du footer */
@@ -354,3 +833,33 @@ footer {
 }
 
 /************************************************* FIN FOOTER*******************************************************************/
+
+/* .tournois {
+  background-color: #000000;
+  border-radius: 10%;
+  color: white;
+  padding-bottom: 10%;
+} */
+/* .jeux ul li img {
+  width: 25px;
+} */
+
+.jeux ul li {
+  margin: 0 50px;
+  margin-top: 40px;
+  list-style-type: none;
+  font-family: "Press Start 2P", serif;
+}
+
+.special-title {
+  color: #c33434;
+}
+
+.horaires ul li {
+  margin: 0 50px;
+  margin-top: 40px;
+  list-style-type: none;
+  font-family: "Press Start 2P", serif;
+}
+
+/*********************************************MEDIA**********************************/
