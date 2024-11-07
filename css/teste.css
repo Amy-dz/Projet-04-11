@@ -1,27 +1,70 @@
-/* Section Parallax */
-.parallax-container {
+/* formulaire */
 
-  position: relative;
-  width: 100%;
-  height: 100vh; /* Hauteur de la section égale à la hauteur de l'écran */
-  overflow: hidden;
-}
+    /* Conteneur principal */
+    .formulaire1 {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
 
-.parallax-container1 {
-  position: relative;
-  width: 100%;
-  height: 100vh; /* Hauteur de la section égale à la hauteur de l'écran */
-  overflow: hidden;
-}
-.parallax {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('../img/rasm/shiigeru.jpg'); /* Image de fond */
-  background-attachment: fixed; /* Effet parallax */
-  background-position: center 110px;
-  background-size: cover; /* L'image couvre toute la section */
-  z-index: -1; /* L'image reste derrière le contenu */
-}
+    .submit{
+      text-align: center;
+    }
+
+    /* Section description de l'événement */
+    .event-description {
+      background-color: #ea4d4d;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+    }
+
+    .event-description h2 {
+      margin-top: 0;
+    }
+
+    /* Mise en page en 4 colonnes */
+    .formul {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); /* 4 colonnes */
+      gap: 20px;
+    }
+
+    .formul .formi {
+      background-color: #ea4d4d;
+      padding: 15px;
+      border: 1px solid #ea4d4d;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .formul .formi label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .formul .formi input,
+    .formul .formi textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ea4d4d;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    /* Responsive : Mise en forme sur mobile */
+    @media (max-width: 1024px) {
+      .formul {
+        grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur tablette */
+      }
+    }
+
+    @media (max-width: 768px) {
+      .formul {
+        grid-template-columns: 1fr; /* 1 colonne sur mobile */
+      }
+
+      .formul .formi {
+        padding: 10px; /* Moins de padding sur mobile */
+      }
+    }
