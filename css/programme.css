@@ -278,7 +278,7 @@
   }
   /************************************************* FIN FOOTER*******************************************************************/
        /* version mobile */
-@media (min-width:0px) and (max-width:600px){
+@media (min-width:300px) and (max-width:600px){
     body{
         background-color: black;
         color: #fff;
@@ -318,13 +318,10 @@
         background-color: #f3f3f3;
     }
 
-    footer{
-       min-width: 100%;
-       width: auto;
-       margin-left: 25px;
+    .btn--download{
+      margin-bottom: 15px;
     }
-    
-    }
+  }
     /*fin version mobile*/
     /*version tablette*/
 @media (min-width:600px) and (max-width:900px){
@@ -410,6 +407,6 @@ tbody > tr:nth-child(even){
     text-decoration: none;
     bottom: 27px;
     z-index: 100;
-    box-shadow: 0 6px 23px rgba(251, 250, 250, 0.759)
+    box-shadow: 0 6px 23px rgba(251, 250, 250, 0.759);
 }
 
