@@ -291,7 +291,7 @@ header {
 }
 
 .parallax .tt {
-  font-size: 2em;
+  font-size: 25px;
   margin-bottom: 20px;
 }
 
@@ -696,8 +696,8 @@ header {
   padding: 40px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 500px;
+  width: 70%;
+  max-width: 300px;
   margin: 200px;
 }
 
@@ -753,13 +753,38 @@ input:valid,
 select:valid {
   border-color: #2ecc71;
 }
-
+@media (max-width: 380px) {
+  .reservation {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 70%;
+    max-width: 300px;
+    margin: 50px;
+  }
+}
 /* Responsive pour les petits écrans */
-@media (max-width: 768px) {
+@media (max-width: 850px) {
+  .reservation {
+    margin: 150px;
+    height: 500px;
+    max-width: 500px;
+  }
   .registration {
     width: 90%;
     padding: 20px;
   }
+  .form {
+    padding-top: 20px;
+  }
+
+  /* .registration-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 400px;
+  } */
 
   h1 {
     font-size: 1.5em;
