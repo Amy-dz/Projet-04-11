@@ -279,8 +279,25 @@ header {
   font-family: "Press Start 2P", sans-serif;
 }
 
+.cta-buttonn {
+  padding: 12px 24px;
+  background-color: #e1ff00;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 18px;
+  margin-top: 20px;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  font-family: "Press Start 2P", sans-serif;
+}
+
 .cta-button:hover {
   background-color: #ff3f00;
+}
+
+.cta-buttonn:hover {
+  background-color: #d2af15;
 }
 /*************************************************TOURNOIS*******************************************/
 /* Section Tournois */
@@ -447,6 +464,10 @@ input[type="radio"]:checked + .navigation label {
   animation: bounce 1.5s infinite alternate ease-in-out;
   animation-delay: 1.5s;
 }
+.conference-content .cta-buttonn {
+  animation: bounce 1.5s infinite alternate ease-in-out;
+  animation-delay: 1.5s;
+}
 
 @keyframes bounce {
   from {
@@ -474,6 +495,13 @@ input[type="radio"]:checked + .navigation label {
   text-align: center;
 }
 
+.animated-sectionn {
+  background: #1a1a1a;
+  color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
 /* Titre */
 .animated-section h2 {
   color: #ff3636;
@@ -482,7 +510,13 @@ input[type="radio"]:checked + .navigation label {
   animation: pixelFadeIn 1s ease-in-out forwards;
   font-family: "Press Start 2P", sans-serif;
 }
-
+.animated-sectionn h2 {
+  color: #efe65b;
+  font-size: 2em;
+  margin-bottom: 20px;
+  animation: pixelFadeIn 1s ease-in-out forwards;
+  font-family: "Press Start 2P", sans-serif;
+}
 /* Style pour le conteneur de la photo */
 .photo-container {
   display: inline-block;
@@ -490,6 +524,16 @@ input[type="radio"]:checked + .navigation label {
   padding: 15px;
   background-color: #333;
   border: 15px solid #ff1900; /* Bordure rappelant le thème rétro */
+  border-radius: 10px;
+  animation: pixelFadeIn 1.2s ease-in-out forwards;
+}
+
+.photo-containerr {
+  display: inline-block;
+  margin: 20px 0;
+  padding: 15px;
+  background-color: #333;
+  border: 15px solid #b6940b; /* Bordure rappelant le thème rétro */
   border-radius: 10px;
   animation: pixelFadeIn 1.2s ease-in-out forwards;
 }
@@ -505,6 +549,10 @@ input[type="radio"]:checked + .navigation label {
 }
 
 .photo-container:hover .photo {
+  transform: scale(1.05);
+  filter: grayscale(0%);
+}
+.photo-containerr:hover .photo {
   transform: scale(1.05);
   filter: grayscale(0%);
 }
@@ -532,9 +580,28 @@ figcaption {
   position: relative;
   overflow: hidden;
 }
+.animated-sectionn {
+  position: relative;
+  overflow: hidden;
+}
 /* Style du bouton */
 .conference-content .cta-button {
   background-color: #ff0400;
+  color: #ffffff;
+  padding: 12px 24px;
+  border: none;
+  font-size: 1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  animation: bounceAndPixel 2s ease-in-out infinite alternate;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 15px;
+  font-family: "Press Start 2P", sans-serif;
+}
+
+.conference-content .cta-buttonn {
+  background-color: #b9ac01;
   color: #ffffff;
   padding: 12px 24px;
   border: none;
@@ -758,8 +825,14 @@ footer {
   .cta-button {
     font-size: 10px;
   }
+  .cta-buttonn {
+    font-size: 10px;
+  }
 
   .conference-content .cta-button {
+    font-size: 10px;
+  }
+  .conference-content .cta-buttonn {
     font-size: 10px;
   }
 
@@ -771,8 +844,20 @@ footer {
     margin: 20px 0;
     padding: 15px;
   }
+  .photo-containerr {
+    margin: 20px 0;
+    padding: 15px;
+  }
   .animated-section h2 {
     color: #ff3636;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    animation: pixelFadeIn 1s ease-in-out forwards;
+    font-family: "Press Start 2P", sans-serif;
+  }
+
+  .animated-sectionn h2 {
+    color: #ffee36;
     font-size: 1.2em;
     margin-bottom: 20px;
     animation: pixelFadeIn 1s ease-in-out forwards;
@@ -793,6 +878,10 @@ footer {
     font-size: 10px;
   }
 
+  .conference-content .cta-buttonn {
+    font-size: 10px;
+  }
+
   .photo {
     width: 300px;
   }
@@ -801,7 +890,18 @@ footer {
     margin: 20px 0;
     padding: 15px;
   }
+  .photo-containerr {
+    margin: 20px 0;
+    padding: 15px;
+  }
   .animated-section h2 {
+    color: #ff3636;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    animation: pixelFadeIn 1s ease-in-out forwards;
+    font-family: "Press Start 2P", sans-serif;
+  }
+  .animated-sectionn h2 {
     color: #ff3636;
     font-size: 1.2em;
     margin-bottom: 20px;
@@ -819,7 +919,14 @@ footer {
     font-size: 10px;
   }
 
+  .cta-buttonn {
+    font-size: 10px;
+  }
+
   .conference-content .cta-button {
+    font-size: 10px;
+  }
+  .conference-content .cta-buttonn {
     font-size: 10px;
   }
 
@@ -835,8 +942,20 @@ footer {
     margin: 20px 0;
     padding: 15px;
   }
+  .photo-containerr {
+    margin: 20px 0;
+    padding: 15px;
+  }
   .animated-section h2 {
     color: #ff3636;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    animation: pixelFadeIn 1s ease-in-out forwards;
+    font-family: "Press Start 2P", sans-serif;
+  }
+
+  .animated-sectionn h2 {
+    color: #fcff36;
     font-size: 1.2em;
     margin-bottom: 20px;
     animation: pixelFadeIn 1s ease-in-out forwards;
